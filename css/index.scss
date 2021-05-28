@@ -78,7 +78,7 @@ body{
 
 
 .wrapper{
-	background: url('../source/img/Первый экран.png') no-repeat center;
+	background: url('../source/img/Первый экран.webp') no-repeat center;
 	box-shadow: 0 10px 10px rgb( 0, 0, 0, 0.25);
 }
 
@@ -467,7 +467,7 @@ h3{
 			justify-content: space-between;
 
 			.weight{
-				background: url('../source/img/Программа Масса.png') center no-repeat;
+				background: url('../source/img/Программа Масса.webp') center no-repeat;
 				width: 500px;
 				height: 450px;
 				display: flex;
@@ -496,7 +496,7 @@ h3{
 			.programs__column{
 
 				.pull-up{
-					background: url('../source/img/Подтягивания.png') no-repeat;
+					background: url('../source/img/Подтягивания.webp') no-repeat;
 					width: 595px;
 					height: 205px;
 					display: flex;
@@ -524,7 +524,7 @@ h3{
 				}
 
 				.drying{
-					background: url('../source/img/Сушка.png') no-repeat;
+					background: url('../source/img/Сушка.webp') no-repeat;
 					width: 595px;
 					height: 205px;
 					display: flex;
@@ -577,7 +577,7 @@ h3{
 
 .why {
 	margin-bottom: $margin__blocks;
-	background: url('../source/img/Возможно.png') no-repeat center;
+	background: url('../source/img/Возможно.webp') no-repeat center;
 	opacity: 0;
 	transition: 0.5s all ease;
 
