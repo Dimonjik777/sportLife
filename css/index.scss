@@ -116,17 +116,45 @@ h3{
 		.emblem__adress{
 			display: flex;
 
-			.adress{
-				border-left: 1px solid white;
-				padding-left: 10px;
+			.emblem{
+				
+				padding-right: 10px;
+				transition: 0.5s all ease;
+				transform: translate(-20%, 0);
+				opacity: 0;
+
+				&._active{
+					opacity: 1;
+					transform: translate(0);
+					border-right: 1px solid white;
+				}
 			}
+				.adress{
+					transform: translate(-120%);
+					opacity: 0;
+					transition: 0.5s all ease 0.5s;
+
+
+					&._active{
+						transform: translate(0);
+						opacity: 1;
+					}
+				}
 			}
 
-		ul{
+		.header__menu{
 
 			li{
 				display: inline-block;
 				margin-right: 25px;
+				transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease 0.7s;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 
 				a{
 					text-decoration: none;
@@ -143,6 +171,125 @@ h3{
 			font-weight: 600;
 			text-decoration: none;
 			color: white;
+
+			transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease 0.9s;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
+		}
+
+		.burger{
+			display: block;
+			width: 30px;
+			height: 20px;
+			cursor: pointer;
+			position: relative;
+			display: none;
+			
+			span{
+				position: absolute;
+				background: white;
+				width: 100%;
+				top: 9px;
+				height: 1px;
+			}
+
+			&:after,
+			&:before{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 1px;
+				background-color: white;
+			}
+
+			&:after{
+				bottom: 0;
+				
+			}
+
+			&:before{
+				top: 0;
+			}
+		}
+
+		.popup{
+			position: fixed;
+			top: -100%;
+			background: linear-gradient(to bottom, #232121, #000);
+			width: 100%;
+			left: 0;
+			z-index: 2;
+			transition: 0.5s all ease;
+
+			&.active{
+				top: 0;
+			}
+
+			.wrapper{
+				padding-left: 20px;
+				background: linear-gradient(to bottom, #232121, #000);
+
+				.close{
+					width: 40px;
+					height: 40px;
+					position: relative;
+					margin-left: auto;
+					padding: 30px;
+					cursor: pointer;
+					padding-bottom: 0;
+
+					&:before{
+						content: '';
+						position: absolute;
+						width: 40px;
+						height: 1px;
+						background: white;
+						transform: rotate(40deg);
+
+					}
+
+					&:after{
+						content: '';
+						position: absolute;
+						width: 40px;
+						height: 1px;
+						background: white;
+						transform: rotate(-40deg);
+
+					}
+				}
+
+				ul{
+				display: flex;
+				flex-direction: column;
+				list-style: none;
+				padding: 0;
+				li{
+					padding-bottom: 20px;
+					a{
+					text-decoration: none;
+					color: white;
+					font-size: 18px;
+				}
+				}
+			}
+			a{
+				color: white;
+				text-decoration: none;
+				font-size: 20px;
+
+			}
+
+			.adress{
+				padding-top: 20px;
+			}
+			}
+			
 		}
 	}
 }
@@ -159,15 +306,52 @@ h3{
 
 		.first__screen__left{
 
+			h1{
+				transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
+			}
+
 			p{
 				font-size: 24px;
 				@include adaptiv-font(24, 20);
 				font-weight: 500;
 				margin-bottom: 50px;
+
+				transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
+			}
+
+			.btn{
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				opacity: 1;
+				}
 			}
 }
 		.first__screen__right{
-			transform: translate(20px, 120px);
+
+			transform: translate(0, 50%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(20px, 120px);
+				opacity: 1;
+				}
 			img{
 				width: 675px;
 			}
@@ -208,6 +392,28 @@ h3{
 			i{
 				font-size: 60px;
 				text-shadow: 0 0 20px #E24646;
+
+
+				transform: translate(0, 40%);
+				opacity: 0;
+				transition: 1s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
+			}
+
+			p{
+
+				transform: translate(0, 40%);
+				opacity: 0;
+				transition: 1s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 			}
 		}
 	}
@@ -227,11 +433,30 @@ h3{
 			h2{
 				@include adaptiv-font(30, 24);
 				width: 745px;
+
+				transform: translate(-20%, 0);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 			}
 
 			p{
 				font-size: 18px;
 				width: 430px;
+
+
+				transform: translate(-20%, 0);
+				opacity: 0;
+				transition: 0.5s all ease 0.5s;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 			}
 		}
 
@@ -249,6 +474,16 @@ h3{
 				flex-direction: column;
 				justify-content: flex-end;
 
+
+				transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
+
 				h3{
 					margin-left: 20px;
 				}
@@ -261,12 +496,22 @@ h3{
 			.programs__column{
 
 				.pull-up{
-					background: url('../source/img/Подтягивания.png') center no-repeat;
+					background: url('../source/img/Подтягивания.png') no-repeat;
 					width: 595px;
 					height: 205px;
 					display: flex;
 					flex-direction: column;
+					margin-top: 50px;
 					justify-content: flex-end;
+
+					transform: translate(20%, 0);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 
 					h3{
 					margin-left: 20px;
@@ -274,6 +519,7 @@ h3{
 				
 				p{
 					margin-left: 20px;
+					margin-bottom: 40px;
 				}
 				}
 
@@ -285,6 +531,15 @@ h3{
 					flex-direction: column;
 					margin-top: 50px;
 					justify-content: flex-end;
+
+					transform: translate(20%, 0);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 
 					h3{
 					margin-left: 20px;
@@ -300,6 +555,22 @@ h3{
 
 		.btn{
 			margin: 0 auto;
+				opacity: 0;
+				transition: 0.5s 0.2s ease;
+
+				&:after{
+					top: 0;
+					left: 0;
+				}
+				&._active{
+				opacity: 1;
+
+				&:after{
+					top: 30%;
+					left: 5%;
+				}
+				}
+
 		}
 	}
 }
@@ -307,6 +578,13 @@ h3{
 .why {
 	margin-bottom: $margin__blocks;
 	background: url('../source/img/Возможно.png') no-repeat center;
+	opacity: 0;
+	transition: 0.5s all ease;
+
+	&._active{
+	opacity: 1;
+	}
+
 	.container{
 		padding: 100px 0;
 		width: 600px;
@@ -315,11 +593,29 @@ h3{
 		h2{
 			@include adaptiv-font(30, 24);
 			font-weight: 700;
+
+			transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 		}
 
 		p{
 			font-weight: 600;
 			@include adaptiv-font(24, 20);
+
+			transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 		}
 	}
 }
@@ -333,46 +629,60 @@ h3{
 			@include adaptiv-font(30, 24);
 			margin-bottom: 75px;
 			text-align: center;
+
+			transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
 		}
 
 		.slider{
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			min-width: 0;
+
+			transform: translate(0, 20%);
+				opacity: 0;
+				transition: 0.5s all ease;
+
+				&._active{
+				transform: translate(0);
+				opacity: 1;
+				}
+
 			.slider__item{
 				width: 370px;
-				height: 410px;
+				height: 390px;
 				display: flex;
 				flex-direction: column;
 				text-align: center;
 				justify-content: flex-end;
 
+				img{
+					width: 370px;
+					height: 287px;
+				}
 				p{
 					margin: 0;
 					font-size: 20px;
 					padding: 15px 0;
 				}
 
-				p:first-child{
+				.red{
 					background: #E24646;
 				}
 
-				p:last-child{
+				.blue{
 					background: #252874;
 				}
 
-				&:nth-child(1){
-					background: url('../source/img/Денис Сидорович.png') no-repeat;
-				}
-				&:nth-child(2){
-					p:last-child{
-						padding: 26px 0;
-					}
-					background: url('../source/img/Максим Маделюк.png') no-repeat;
-				}
-				&:nth-child(3){
-					background: url('../source/img/Андрей Макенко.png') no-repeat;
-				}
+
+
 			}
 		}
 
@@ -455,9 +765,14 @@ h3{
 			}
 
 			.line{
-				width: 225px;
+				width: 0;
 				height: 1px;
 				background: white;
+				transition: 2s all ease;
+
+				&._active{
+					width: 225px;
+				}
 			}
 		}
 	}
@@ -473,6 +788,15 @@ h3{
 			font-weight: 700;
 			margin-bottom: 55px;
 			text-align: center;
+
+			transition: 0.5s all ease;
+			transform: translate(0, 20%);
+			opacity: 0;
+
+			&._active{
+				transform: translate(0);
+				opacity: 1;
+			}
 		}
 
 		.gym__content{
@@ -482,6 +806,13 @@ h3{
 				align-items: center;
 				justify-content: space-between;
 
+				transition: 0.5s all ease;
+				opacity: 0;
+
+			&._active{
+				opacity: 1;
+			}
+
 				img:nth-child(2){
 				width: 480px;
 				height: 320px;
@@ -490,7 +821,16 @@ h3{
 
 			.bottom__img{
 				margin-top: 50px;
-				width: 100%;		
+				width: 100%;	
+
+				transition: 0.5s all ease;
+			transform: translate(0, 20%);
+			opacity: 0;
+
+			&._active{
+				transform: translate(0);
+				opacity: 1;
+			}	
 			}
 		}
 	}
@@ -502,10 +842,19 @@ h3{
 
 	.container{
 		h2{
-			@include adaptiv-font(30, 24);
+			@include adaptiv-font(28, 24);
 			font-weight: 700;
 			width: 410px;
 			margin-bottom: 30px;
+
+			transition: 0.5s all ease;
+			transform: translate(0, 20%);
+			opacity: 0;
+
+			&._active{
+				transform: translate(0);
+				opacity: 1;
+			}
 		}
 
 		.subscribe__content{
@@ -521,6 +870,15 @@ h3{
 				text-align: center;
 				position: relative;
 				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+				transition: 0.5s all ease;
+				left: -10%;
+				opacity: 0;
+
+				&._active{
+					left: 0;
+					opacity: 1;
+				}
 
 				h3{
 					padding-top: 50px;
@@ -579,7 +937,15 @@ h3{
 			}
 
 			.subscribe__content__right{
-				transform: translate(20%, 0);
+				transform: translate(20%, 20%);
+
+				transition: 0.5s all ease;
+				opacity: 0;
+
+				&._active{
+					opacity: 1;
+					transform: translate(20%, 0);
+				}
 			}
 		}
 	}
@@ -603,7 +969,14 @@ h3{
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				transition: 0.5s all ease;
+				transform: translate(-20%, 0);
+				opacity: 0;
 
+				&._active{
+					transform: translate(0);
+					opacity: 1;
+				}
 
 
 				.email{
@@ -615,6 +988,17 @@ h3{
 				}
 			}
 
+			.contacts__content__right{
+				transition: 0.5s all ease;
+				
+				opacity: 0;
+
+				&._active{
+					
+					opacity: 1;
+				}
+			}
+
 			img{
 				width: 100%;
 			}
@@ -623,6 +1007,13 @@ h3{
 }
 
 .footer{
+
+	transition: 0.5s all ease;
+				opacity: 0;
+
+				&._active{
+					opacity: 1;
+				}
 
 	.container{
 		display: flex;
@@ -700,13 +1091,7 @@ h3{
 			margin-top: 50px;
 		}
 	}
-	.trainers .container .slider .slider__item:last-child{
-		display: none;
-	}
-
-	.trainers .container .slider{
-		justify-content: space-around;
-	}
+	
 
 	.programs .container{ 
 
@@ -775,8 +1160,16 @@ h3{
 @media screen and (max-width: 960px){
 	.header .container .emblem__adress .adress,
 	.header .container .phone,
-	.header .container ul{
+	.header .container .header__menu{
 		display: none;
+	}
+
+	.header .container .burger{
+		display: block;
+	}
+
+	.header .container .emblem__adress .emblem._active{
+		border: none;
 	}
 
 }
@@ -792,14 +1185,15 @@ h3{
 		width: auto;
 	}
 
-	.trainers .container .slider .slider__item:nth-child(2){
-		display: none;
+	.slick-initialized .slick-slide{
+		margin-left: 30px;
 	}
+
 	.trainers .container .slider__navigate .slider__button{
 		display: none;
 	}
 	.trainers .container .slider__navigate{
-		width: 370px;
+		display: none;
 	}
 	.first__screen .container .first__screen__right{
 		display: none;
